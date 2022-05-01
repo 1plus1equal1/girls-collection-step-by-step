@@ -18,3 +18,7 @@
 
 #### Chúng ta có cấu trúc cơ bản của dự án như sau:
 ![Screen Shot 2022-05-01 at 21 57 25](https://user-images.githubusercontent.com/45780510/166151573-ba873764-7d46-428e-a575-85b0e6489d33.png)
+- Thư mục drawable để chứa các file graphic
+ resource như bitmap file(.png, .jpg, .gif,...)
+- Thư mục layout chứa cái file layout, ui cho fragment, activity, custom view.
+- Thư mục values có 2 file strings.xml chứa string và colors.xml chứa màu 
