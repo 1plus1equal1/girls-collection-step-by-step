@@ -5,15 +5,22 @@
 - `Thêm ảnh vào dự án và sử dụng`
 - `Biết sử dụng ImageView cơ bản`
 
-#### Bước 1: Thêm ảnh vào dự án
+## Thêm thư viện Lifecycle vào dự án
+#### Bước 1: Tìm thư viện trên https://developer.android.com/jetpack/androidx/explorer
+![image](https://user-images.githubusercontent.com/65409611/166155478-91eaec13-e32a-44e2-9be3-2a9f03049e44.png)
+#### Bước 2: Thêm thư viện vào dự án
+- `Copy các url cần dùng ( ở đây chỉ dùng viewmodel và lifecycle runtime ) vào bỏ vào file build.gradle của app sau đó click vào Sync now.`
+![image](https://user-images.githubusercontent.com/65409611/166156176-ca9c49c1-d79f-4865-ae82-a84fe8700798.png)
+
+#### Bước 3: Thêm ảnh vào dự án
 https://user-images.githubusercontent.com/45780510/166152760-c8f7bdc8-189e-483a-87aa-07b9b84c4651.mov
 - Chọn ảnh cần thêm và kéo vào thư mục drawable của dự án
 
-#### Bước 2: Tạo SplashActivity.kt và file layout activity_splash.xml
+#### Bước 4: Tạo SplashActivity.kt và file layout activity_splash.xml
 ![Screen Shot 2022-05-01 at 22 28 16](https://user-images.githubusercontent.com/45780510/166152954-6d127ffa-9352-4d69-b187-65952ec28b6b.png)
 ![Screen Shot 2022-05-01 at 22 31 18](https://user-images.githubusercontent.com/45780510/166153349-42bf0928-839a-47b5-9b84-4a6a6dba7e23.png)
 
-#### Bước 3: 
+#### Bước 5: 
 - Mở file `activity_splash.xml`<br/>
 ![Screen Shot 2022-05-01 at 22 45 15](https://user-images.githubusercontent.com/45780510/166153676-dc16b8e6-bc4e-41f4-82df-e13ea57cdd61.png)<br/>
 - Nhập vào `ImageView` và nhấn `Apply`<br/>
@@ -21,7 +28,7 @@ https://user-images.githubusercontent.com/45780510/166152760-c8f7bdc8-189e-483a-
 -Bây giờ `ConstraintLayout` cũ đã trở thành `ImageView`<br/>
 ![Screen Shot 2022-05-01 at 22 52 26](https://user-images.githubusercontent.com/45780510/166153834-c8005890-2e8f-4ed0-8bd2-357512f68b98.png)<br/>
 
-#### Bước 4: Hiển thị hình ảnh lên `ImageView`
+#### Bước 6: Hiển thị hình ảnh lên `ImageView`
 - Nhấn chọn `ImageView`, ở tab `Attributes` tìm `srcCompat` rồi nhấn vào icon ảnh để mở mục chọn ảnh<br/>
 ![Screen Shot 2022-05-01 at 22 57 50](https://user-images.githubusercontent.com/45780510/166153996-860d205f-bae4-4569-bfdf-d78f7cbed582.png)<br/>
 ![Screen Shot 2022-05-01 at 22 59 35](https://user-images.githubusercontent.com/45780510/166154140-d9876851-1777-4648-8bec-53c29a1111e5.png)<br/>
@@ -32,7 +39,7 @@ https://user-images.githubusercontent.com/45780510/166152760-c8f7bdc8-189e-483a-
 - Bức ảnh bây giờ đã hiển thị đúng<br/>
 ![Screen Shot 2022-05-01 at 23 08 30](https://user-images.githubusercontent.com/45780510/166154413-0ded45c8-3db5-402a-b3ba-174ee92cb4ae.png)<br/>
 
-#### Bước 4: Delay màn hình Splash 5s rồi chuyển sang màn hình khác
+#### Bước 7: Delay màn hình Splash 5s rồi chuyển sang màn hình khác
 - Mở file SplashActivity.kt
 - Chúng ta sẽ sử dụng coroutines để có thể delay 5s và chuyển sang màn hình `MainActivity` bằng đoạn code sau
 ```kotlin
