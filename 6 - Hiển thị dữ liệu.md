@@ -144,4 +144,4 @@ class MainViewModel : ViewModel() {
 ```
 
 #### Chạy ứng dụng lên và chúng ta đã có ứng dụng xem ảnh girl xinh rồi đóo
-https://github.com/1plus1equal1/android_traning_todo_app/blob/main/images_videos/Screen%20Recording%202022-05-02%20at%2015.01.17.mov
+https://github.com/1plus1equal1/android_traning_todo_app/blob/main/images_videos/Screen%20Recording%202022-05-02%20at%2015.01.17.mov?raw=true
