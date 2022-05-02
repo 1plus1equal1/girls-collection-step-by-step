@@ -5,7 +5,7 @@
   - `Biết cách cài đặt, sử dụng recyclerview cơ bản, TextView, thư viện Glide`
   - `Tổng quan về mô hình MVVM, ViewModel, LiveData`
   - `Sử dụng viewBinding cơ bản`
-#### Bước 1: Thêm các thư viện cần thiết và dự án 
+#### Bước 1: Thêm các thư viện cần thiết vào dự án 
 ###### Thực hiện theo các bước như ở bài hướng dẫn trước để thêm thư viện vào dự án
 ```pro
 plugins {
@@ -31,7 +31,7 @@ buildFeatures {
 ```
 
 #### Bước 2: Thêm recyclerview vào file layout
-###### Mở file activity_main.xml trong thư mục layout/ và chỉnh sửa thành như sau 
+###### Mở file activity_main.xml trong thư mục layout/ và chỉnh sửa giống như sau:
 ```xml 
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -69,7 +69,7 @@ là id của recyclerview
   Recyclerview sẽ full màn hình nên height và width sẽ là match_parent nhưng ở constraint layout nên sẽ là 0dp
   
   #### Bước 3: Tạo Adapter, ViewHolder cho recyclerview
-  ###### Để hiển thị một list các item trên một recyclerview, chúng ta sẽ viết adapter kế thừa từ ListAdapter và trông thế này:
+  ###### Để hiển thị một list các item trên một recyclerview, chúng ta sẽ viết adapter kế thừa từ ListAdapter và nó trông thế này:
   ```kotlin
   class PostAdapter : ListAdapter<Post, PostViewHolder>(PostDiffUtil()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
@@ -81,7 +81,8 @@ là id của recyclerview
     }
 }
   ```
-  ###### Một cách đơn giản adapter chính là 1 thứ mà có thể giúp cho recyclerview biết nó sẽ hiển thị gì và hiển thị như nào
+  ###### Một cách đơn giản adapter chính là 1 thứ mà có thể giúp cho recyclerview biết nó sẽ hiển thị gì và hiển thị như nào.
+  
   Có 2 phương thức cần thiết trong 1 ListAdapter là onCreateViewHolder và onBindViewHolder
   - onBindViewHolder sẽ là nơi đưa dữ liệu của từng item cho viewholder thông qua ``` getItem(position) ```
  - onCreateViewHolder sẽ giúp adapter hiểu nó sẽ cần 1 viewholder như nào. Nhưng khoan viewholder là cái gì???
@@ -106,7 +107,7 @@ là id của recyclerview
   ```
  - function ` from ` để giấu các logic ko cần thiết khi khởi tạo viewholder mà không cần dùng constructor
  - function ` bind ` để truyền data vào view để hiện thị ở từng item
- ###### Vì List Adapter cần 1 DiffUtil để khi dữ liệu thay đổi, item nào đã có thì sẽ giữ nguyên, chưa có thì sẽ thêm vào, tránh trường hợp giật lag khi sử dụng
+ ###### Vì List Adapter cần 1 DiffUtil để khi dữ liệu thay đổi, item nào đã có thì sẽ giữ nguyên, chưa có thì sẽ thêm vào, tránh trường hợp giật lag khi sử dụng.
  
  ```kotlin
  class PostDiffUtil : DiffUtil.ItemCallback<Post>() {
@@ -117,7 +118,7 @@ là id của recyclerview
  ```
  
 #### Bước 4: Tạo ViewModel cho MainActivity
-Trước hết chsung ta cần biết ViewModel là gì.
+Trước hết chúng ta cần biết ViewModel là gì.
 
 ###### ViewModel là gì ???
  `ViewModel` là một class có trách nhiệm chuẩn bị và quản lý dữ liệu cho một UI component (có thể là Activity hoặc Fragment). </br>
@@ -128,7 +129,7 @@ Trước hết chsung ta cần biết ViewModel là gì.
 
 ###### LiveData là gì ???
 LiveData là một lớp giữ dữ liệu quan sát được.</br>
-LiveData có vòng đời, có nghĩa là nó tôn trọng vòng đời của các thành phần ứng dụng khác, chẳng hạn như các activities, fragments hoặc services.
+LiveData nó tôn trọng vòng đời của các thành phần ứng dụng khác, chẳng hạn như các activities, fragments hoặc services.
 Nhận thức này đảm bảo LiveData chỉ cập nhật các thành phần ứng dụng quan sát nó khi những thành phần này đang ở trạng thái hoạt động.
 
 Đã rõ, hãy cùng xem 1 ViewModel cơ bản sẽ trông như nào:
