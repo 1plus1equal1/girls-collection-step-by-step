@@ -76,11 +76,8 @@ object Client {
         }
     }
 
-    suspend fun getPosts(limit: Int?, offset: Int?): PostsResponse {
-        return httpClient.get(POSTS_URL) {
-            parameter("limit", limit)
-            parameter("offset", offset)
-        }
+    suspend fun getPosts(): PostsResponse {
+        return httpClient.get(POSTS_URL)
     }
 }
 ```
