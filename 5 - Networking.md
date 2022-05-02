@@ -122,10 +122,14 @@ object Client {
 ## Chú ý:
 - Để ý thì chúng ta có thể thấy là đằng trước phương thức `getPostResponse` có từ khoá `suspend`, đây là từ khoá để giúp các câu lệnh trong phương thức có thể chạy mà không ảnh hưởng tới giao diện. Ngoài ra, nếu trong 1 phương thức nào đó có gọi tới một phương thức có từ khoá `suspend` thì phương thức đó cũng phải có từ khoá `suspend` nếu không Android Studio sẽ báo lỗi.
 - Để có thể chạy được 1 phương thức `suspend` mà không cần đánh đấu các phương thức ở nơi gọi ta cần khởi tạo 1 coroutine tương tự phần SplashScreen.
-Ví dụ:
+## Coroutine là cái méo gì?
+Hiểu đơn giản là coroutine sẽ giúp thực thi các phương thức bất đồng bộ (phương thức chạy ko biết trước lúc nào xong) trong 1 phạm vi code và không làm cho luồng hiện tại hay UI thread bị block bởi các phương thức bất đồng bộ đó
+### Ví dụ:
 ```kotlin
+// Khởi tạo coroutine
 viewModelScope.launch {
     val posts = Client.getPostResponse() // getPostResponse là suspend function
+    // Code bên dưới sẽ chạy khi nào getPostResponse chạy xong
 }
 ```
 
