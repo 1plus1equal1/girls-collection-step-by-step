@@ -76,18 +76,18 @@ object Client {
         }
     }
 
-    suspend fun getPosts(): PostsResponse {
+    suspend fun getPostResponse(): PostsResponse {
         return httpClient.get(POSTS_URL)
     }
 }
 ```
 ## Chú ý:
-- Để ý thì chúng ta có thể thấy là đằng trước phương thức `getPosts` có từ khoá `suspend`, đây là từ khoá để giúp các câu lệnh trong phương thức có thể chạy mà không ảnh hưởng tới giao diện. Ngoài ra, nếu trong 1 phương thức nào đó có gọi tới một phương thức có từ khoá `suspend` thì phương thức đó cũng phải có từ khoá `suspend` nếu không Android Studio sẽ báo lỗi.
+- Để ý thì chúng ta có thể thấy là đằng trước phương thức `getPostResponse` có từ khoá `suspend`, đây là từ khoá để giúp các câu lệnh trong phương thức có thể chạy mà không ảnh hưởng tới giao diện. Ngoài ra, nếu trong 1 phương thức nào đó có gọi tới một phương thức có từ khoá `suspend` thì phương thức đó cũng phải có từ khoá `suspend` nếu không Android Studio sẽ báo lỗi.
 - Để có thể chạy được 1 phương thức `suspend` mà không cần đánh đấu các phương thức ở nơi gọi ta cần khởi tạo 1 coroutine tương tự phần SplashScreen.
 Ví dụ:
 ```kotlin
 viewModelScope.launch {
-    val posts = Client.getPosts() // getPosts là suspend function
+    val posts = Client.getPostResponse() // getPostResponse là suspend function
 }
 ```
 
