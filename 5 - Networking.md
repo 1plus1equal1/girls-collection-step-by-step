@@ -62,7 +62,7 @@ object Client {
         }
 
         install(JsonFeature) {
-            serializer = KotlinxSerializer(
+            serializer = kotlinx.serialization.json.KotlinxSerializer(
                 kotlinx.serialization.json.Json {
                     prettyPrint = true
                     ignoreUnknownKeys = true
