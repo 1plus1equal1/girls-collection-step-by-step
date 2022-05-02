@@ -1,11 +1,11 @@
-package dev.tsnanh.android.girlscollection
+package dev.tsnanh.android.girlscollection.ui.splash
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.lifecycle.lifecycleScope
+import dev.tsnanh.android.girlscollection.R
+import dev.tsnanh.android.girlscollection.ui.main.MainActivity
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
